@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index",
+    "order-list": "/components/orderList/index",
+    "order-dpay": "/components/orderDpay/index"
+
+  }
+}

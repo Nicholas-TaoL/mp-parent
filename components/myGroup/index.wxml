@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="dpay-ctn">
+  <view class="top-wrap" hover-class="none" hover-stop-propagation="false">
+    <rich-text class="time" name = 'span'>
+      {{value.time}}
+    </rich-text>
+    <rich-text class="pay-type" name = 'span'>
+      {{value.status == 0 ? '拼团中' : value.status == 1 ? '拼团成功' : '拼团失败'}}
+    </rich-text>
+  </view>
+  <view class="content-wrap">
+   <image wx:if="{{value.status == 1}}" class="full-img" src="/images/full.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+   <image wx:if="{{value.status == 2}}" class="timeout-img" src="/images/timeout.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+     
+    <view class="img-wrap" hover-class="none" hover-stop-propagation="false">
+      <image class="header-img" src="{{value.course.produck_image||'/images/toux.jpg'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      <view class="identity" wx:if = "{{value.status == 0}}">
+        还差{{value.tuan_number - value.real_number}}人
+      </view>
+    </view>
+    <view class="content-right">
+      <view class="msg">
+        
+        <view class="msg-title ellipsis" hover-class="none" hover-stop-propagation="false">
+          {{value.course.title}}
+        </view>
+        <view class="msg-header" hover-class="none" hover-stop-propagation="false">
+          <image wx:for="{{value.members}}" wx:key = '{{index}}' wx:index = 'index' class="header" src="{{item.produck_image||'/images/wait.png'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          
+        </view>
+          
+          
+      </view> 
+      <view class="pt-wrap">
+        <view class="pt-btn">
+          {{value.tuan_number}}人拼团
+        </view>
+        <view class="pt-price">
+          ¥{{value.price}}
+        </view>
+      </view>
+      <view class="bottom-wrap pt-type-{{value.status}}" hover-class="none" hover-stop-propagation="false">
+        <view class="pt-time"  wx:if="{{value.status == 0}}">
+          <!-- <text wx:if="{{mcountDown[mcountDown] == 0}}" class="" selectable="false" space="false" decode="false">
+            已失效
+          </text> -->
+          <text class="" selectable="false" space="false" decode="false">
+            {{value.mcountDown}}
+          </text>
+        </view>
+        <view class="pt-time"  wx:else>
+           {{value.mcountDown}}
+        </view>
+        <view wx:if="{{value.status == 0}}" catch:tap ="btnTap" data-status = '{{value}}' class="pt-group-btn color-{{value.status}}">
+          {{value.status == 0 ? '邀请拼团' : value.status == 1 ? '拼团详情' : '拼团详情'}}
+        </view>
+      </view>
+        
+    </view>
+      
+     
+  </view>
+
+    
+    
+    
+</view>
+  
+  

@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<!-- <view class="order-ctn"> -->
+  <!-- <tabView bind:parentEvent = 'scrollLoadingMore' listType = 'order' class="tab-view" tabs = '{{tabs}}' currentTab = '{{currentTab}}'></tabView> -->
+  <!-- <order-list class="tab-view" tabs = '{{tabs}}'></order-list>
+</view> -->
+
+<!--index.wxml-->
+ <view class="container list-ctn">
+      <view class="tab-wrap">
+        <view class="swiper-tab">
+          <view wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="swiper-tab-item {{item.current == currentTab?'active':''}}" data-current="{{item.current}}" bindtap="clickTab">{{item.label}}</view>
+        </view>
+      </view>
+      <swiper class="swiper-ctn" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+        <swiper-item class = 'sw1' wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <view  class="introduce">
+            <scroll-view  class="order-ctn" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+              <view catch:tap="listItemTap" data-item = '{{item}}' wx:for="{{caiItems}}" wx:for-index="index" wx:key="index" class="item-wrap" hover-class="none" hover-stop-propagation="false">
+                <order-group bind:groupBtnClick = 'shareBtn' index = "{{index}}" wx:if="{{caiItems.length !== 0}}" wx:for-index="index" currentTab = "{{currentTab}}" value = '{{item}}'></order-group>
+                
+              </view>
+            <view wx:if="{{caiItems.length == 0}}" class="no-message" hover-class="none" hover-stop-propagation="false">
+              <image class="no-message-img" src="/images/no-message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                
+              </image>
+              暂无数据
+            </view>    
+            <view class="tips">
+                <view wx:if="{{hasMore}}">
+                    <!-- <image src="../img/loading.gif" mode="aspectFill"/> -->
+                    <text>玩了命的加载中...</text>
+                </view>
+                <view wx:else><text>没有更多内容了</text></view>
+            </view>
+            </scroll-view>
+            
+            <!-- <loading hidden="{{loading}}">加载中...</loading> -->
+            
+          </view>
+          
+        </swiper-item>
+      </swiper>
+      <show-dialog desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2'  bind:close = 'closeCallBack' hide='{{hide2}}'></show-dialog>
+
+    </view>
+  
+  

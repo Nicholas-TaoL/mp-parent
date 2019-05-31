@@ -1,0 +1,64 @@
+@import '../../public/index';
+.wd-ctn {
+  height: 100%;
+  background-color: rgba(246,246,246,1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 13rpx 25rpx;
+  padding-bottom: 0;
+}
+
+.list-item {
+  height: 140rpx;
+  background:rgba(255,255,255,1);
+  margin-top: 11rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 28rpx 21rpx;
+  justify-content: space-between;
+  position: relative;
+}
+.label {
+  font-size: 30rpx;
+  color:rgba(51,51,51,1);
+}
+.time {
+  font-size: 24rpx;
+}
+.num {
+  position: absolute;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(247,147,30,1);
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.loading {
+  height: 50rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page_list {
+  height:100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: rgba(246,246,246,1);
+}
+.tips{
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+
+
+

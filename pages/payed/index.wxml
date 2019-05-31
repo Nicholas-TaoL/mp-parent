@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="payed-ctn">
+  <view class="pay-top-ctn">
+    <top-detal msg = '{{msg}}' type = '{{type}}'></top-detal>
+   <view class="pay-type-ctn" hover-class="none" hover-stop-propagation="false">
+     <rich-text class="pay-title" name = 'span'>
+       微信支付
+     </rich-text>
+     <icon type="success" size="16" />
+   </view>
+  </view>
+    
+    <view class="pay-bottom-ctn" >
+      <view class="pay-bottom-left" hover-class="none" hover-stop-propagation="false">
+        <rich-text class="payed" name = 'span'>
+          付款
+        </rich-text>
+        <rich-text class="payed-price" name = 'span'>
+          ¥{{msg.price}}
+        </rich-text>
+      </view>
+      <view bind:tap="payed" class="pay-bottom-right" hover-class="none" hover-stop-propagation="false">
+        去支付
+      </view>
+        
+    </view>
+    <show-dialog desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2'  bind:close = 'closeCallBack' hide='{{hide2}}'></show-dialog>
+    
+</view>

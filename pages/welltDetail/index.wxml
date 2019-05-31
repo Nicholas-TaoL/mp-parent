@@ -1,0 +1,32 @@
+<scroll-view  class="page_list" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+    <view wx:if="{{caiItems.length}}" class="" hover-class="none" hover-stop-propagation="false">
+      <view wx:for="{{caiItems}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="list-item" hover-class="none" hover-stop-propagation="false">
+        <view class="label">
+          {{item.description}}
+        </view>
+        <view class="time">
+          {{times[index]}}
+        </view>
+        <view class="num">
+          +{{item.increment}}
+        </view>
+      </view>
+      <view class="tips">
+          <view wx:if="{{hasMore}}">
+              <!-- <image src="../img/loading.gif" mode="aspectFill"/> -->
+              <text>玩了命的加载中...</text>
+          </view>
+          <view wx:else><text>没有更多内容了</text></view>
+      </view>
+    </view>
+    <view wx:if="{{caiItems.length == 0}}" class="no-message" hover-class="none" hover-stop-propagation="false">
+        <image class="no-message-img" src="/images/no-message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+          
+        </image>
+      暂无数据
+    </view>
+</scroll-view>
+
+  
+<loading hidden="{{loading}}">加载中...</loading>
+  

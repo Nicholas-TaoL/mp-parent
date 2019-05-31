@@ -1,0 +1,158 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx02c7aa9baf726a17",
+	"projectname": "parent_client",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": 0,
+					"name": "mine",
+					"pathName": "pages/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Detaik",
+					"pathName": "pages/homeDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "payed",
+					"pathName": "pages/payed/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "share",
+					"pathName": "pages/share/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wallet",
+					"pathName": "pages/wallet/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "regimentalCommander",
+					"pathName": "pages/regimentalCommander/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "订单列表",
+					"pathName": "pages/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的拼团",
+					"pathName": "pages/myGroup/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/setting/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "意见与反馈",
+					"pathName": "pages/opinions/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成就",
+					"pathName": "pages/achievement/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "吸顶灯",
+					"pathName": "pages/fixedTop/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "video",
+					"pathName": "pages/homeVideoDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "play",
+					"pathName": "pages/videoPlayDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "任务",
+					"pathName": "pages/tuanzhangrw/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团中",
+					"pathName": "pages/groupDpayDetail/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

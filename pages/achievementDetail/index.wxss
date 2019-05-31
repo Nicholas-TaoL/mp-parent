@@ -1,0 +1,8 @@
+/**index.wxss**/
+@import '../../components/achievement/index.wxss';
+.achieve-ctn {
+  height: 100%;
+  box-sizing: border-box;
+  background:rgba(246,246,246,1);
+}
+

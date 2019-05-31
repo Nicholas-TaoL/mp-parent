@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container list-ctn">
+  <view class="tab-wrap">
+    <view class="swiper-tab">
+      <view wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="swiper-tab-item {{item.current == currentTab?'active':''}}" data-current="{{item.current}}" bindtap="clickTab">{{item.label}}</view>
+    </view>
+  </view>
+  <swiper class="swiper-ctn" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+    <swiper-item class = 'sw1' wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="introduce">
+     
+        
+        <scroll-view
+          wx:if="{{listType === 'achievement'}}"
+          scroll-y
+          class="achieve-wrap"
+          bindscrolltoupper="upper"
+          bindscrolltolower="lower"
+          bindscroll="scroll"
+          scroll-into-view="{{toView}}"
+          scroll-top="{{scrollTop}}"
+        >
+        <view  wx:for="{{item.type == 'myzs'?achieve.maths:[1]}}" id="{{'inToView'+idex}}" wx:for-item="itemx" wx:for-index="idex" wx:key="idex">
+          <view wx:if="{{item.type == 'myzs'}}" class="" hover-class="none" hover-stop-propagation="false">
+            <view class="top-title" wx:if="{{item.type == 'myzs'}}">
+            {{itemx.m}}月
+            </view>
+            <view class="lists-wrap" >
+              <view class=""  hover-class="none" hover-stop-propagation="false">
+                <navigator  url="/pages/achievementDetail/index"  open-type="navigate">
+                  <my-achievement  data-item = "{{value}}" wx:for="{{item.type == 'myzs' ? itemx.lists :[0]}}" wx:for-item="value" wx:for-index="indx" wx:key="indx" value = '{{value}}' type = '{{item.type}}'></my-achievement>
+                </navigator>
+              </view>
+                
+            </view>
+          </view>
+          <view wx:else class="list-wrap" hover-class="none" hover-stop-propagation="false">
+              <my-achievementOne achieveOnes = '{{achieveOnes}}' ></my-achievementOne>
+          </view> 
+          
+        </view>
+        
+          
+
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+   
+</view>

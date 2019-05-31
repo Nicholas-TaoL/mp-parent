@@ -1,0 +1,46 @@
+.achievement-ctn {
+  background:rgba(246,246,246,1);
+  box-sizing: border-box;
+  padding: 20rpx 0;
+}
+.topImg-wrap {
+  height: 500rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.top{
+  display: flex;
+  padding: 0 20rpx;
+  padding-bottom: 20rpx;
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.bottom {
+  height:250rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 36rpx 68rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+}
+
+.xz-box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 93rpx;
+}
+.xz-img{
+  width: 135rpx;
+  height: 135rpx;
+}
+.label{
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-top: 20rpx;
+}

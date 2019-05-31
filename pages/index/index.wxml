@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<!-- <import src="../../bottomTabbar.wxml" />
+
+<view class="container home-ctn">
+  <view class = 'img-wrap'>
+    <image class="banner-img" src="/images/hb.jpg" bind:tap="onBlockBanner"/>
+  </view>
+  <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+</view> -->
+
+<view class="home-ctn" hover-class="none" hover-stop-propagation="false">
+  <view wx:if="{{0}}" class="top-fixed-wrap" hover-class="none" hover-stop-propagation="false">
+    <image class="icon" src="{{blocks[topPage].url}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <rich-text class="lable" name = 'span'>
+      {{topPage === 4 ? '大咖专栏' :blocks[topPage].title}}
+    </rich-text>
+  </view>
+  <view class="content-wrap" hover-class="none" hover-stop-propagation="false">
+    <scroll-view class="scroll-ctn" scroll-y="true" bindscroll="scroll">
+      <view class="top-banner" hover-class="none" hover-stop-propagation="false">
+        <swiper
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}"
+          interval="{{interval}}"
+          duration="{{duration}}"
+        >
+          <block wx:for="{{imgUrls}}" wx:for-index="index" wx:key="index">
+            <swiper-item>
+              <image src="{{item.url}}" class="slide-image"/>
+              <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view wx:for="{{blocks}}" wx:for-index="index" wx:key="index" class="item-wrap"  hover-class="none" hover-stop-propagation="false">
+        <view id="block-{{index}}" class="title-wrap" hover-class="none" hover-stop-propagation="false">
+          <image class="icon-t" src="{{item.url}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          <rich-text class="lable" name = 'span'>
+            {{item.title}}
+          </rich-text>
+        </view>
+        <view class="block-wrap" hover-class="none" hover-stop-propagation="false">
+          <view bind:tap="blockTap" data-item = '{{block}}' data-index = '{{indx}}' wx:for="{{item.childrens}}" wx:for-index="indx" wx:key="indx" wx:for-item="block" class="block" hover-class="none" hover-stop-propagation="false">
+            <image class="icon" src="{{block.url}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+            <rich-text class="lable" name = 'span'>
+              {{block.title}}
+            </rich-text>
+          </view>
+        </view>
+        <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+      </view>
+      <view class="dka-wrap" hover-class="none" hover-stop-propagation="false">
+        <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+        <view class="dka-top-wrap" id="block-4" hover-class="none" hover-stop-propagation="false">
+          <view class="dka-top-left" hover-class="none" hover-stop-propagation="false">
+            <image class="dka-left-icon" src="/images/dakazhuanlan.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+            <rich-text class="label" name = 'span'>
+              大咖专栏
+            </rich-text> 
+          </view>
+          <!-- <view class="dka-top-right" hover-class="none" hover-stop-propagation="false">
+            <rich-text class="label" name = 'span'>
+              查看全部
+            </rich-text>
+            <image class="dka-right-icon" src="/images/next.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          </view> -->
+        </view>
+          
+        <view bind:tap="dkTap" data-item = '{{dkitem}}' wx:for="{{dakas}}" wx:for-index="idx" wx:key="idx" wx:for-item="dkitem" class="dk-item-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="dk-cont-left" hover-class="none" hover-stop-propagation="false">
+            <image src="{{dkitem.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="true" binderror="" bindload="" />
+            <view class="bottom-tip" hover-class="none" hover-stop-propagation="false">
+              {{dkitem.teacher_name}}
+            </view>
+          </view>
+          <view class="dk-cont-middle" hover-class="none" hover-stop-propagation="false">
+            <view class="dk-title" name = 'span'>
+              {{dkitem.title}}
+            </view>
+            <view class="dk-des" name = 'span'>
+              {{dkitem.description}}
+            </view>
+            <view class="dk-bottom" hover-class="none" hover-stop-propagation="false">
+              <rich-text class="dk-item-msg0" name = 'span'>
+                ￥{{dkitem.price}}
+              </rich-text>
+              <rich-text class="dk-item-msg1" name = 'span'>
+                {{dkitem.sign_number}}人学习
+              </rich-text>
+            </view>
+          </view>
+          <view wx:if="{{dkitem.audition}}" class="dk-cont-right" hover-class="none" hover-stop-propagation="false">
+            <view class="circle" hover-class="none" hover-stop-propagation="false">
+              <image class="play" src="/images/next-yellow.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+            </view>
+            <rich-text class="listen" name = 'span'>
+              试听
+            </rich-text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide2}}'></show-toast>
+    
+  </view>
+
+</view>
+<!-- <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button> -->
+
+  

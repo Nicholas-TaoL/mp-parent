@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index",
+    "order-dpay": "/components/orderDpay/index",
+    "show-dialog": "/components/dialog/index",
+    "order-group": "/components/myGroup/index"
+  }
+}

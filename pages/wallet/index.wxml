@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="wallet-ctn">
+   <view class="top-ctn">
+     <view class="top-content">
+       <view class="price-top">
+        <image class="gold-coin" src="/images/gold-coin.png" />
+        <rich-text class="gold-label" name = 'span'>
+          金币余额
+        </rich-text> 
+       </view>
+       <view class="gold-num">
+         1000.00
+       </view>
+         
+         
+     </view>
+       
+   </view>
+   <wallet-tab bis = "{{bis}}"></wallet-tab>
+   <wallet-kist bind:parentEvent = 'handleDetail'></wallet-kist>
+
+   <view class="withdrawal-wrap" hover-class="none" hover-stop-propagation="false">
+     <view class="withdrawal-btn" hover-class="none" hover-stop-propagation="false">
+       我要提现
+     </view>
+       
+   </view>
+     
+     
+</view>

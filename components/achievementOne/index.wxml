@@ -1,0 +1,22 @@
+<view class="achievement-ctn" hover-class="none" hover-stop-propagation="false">
+ 
+  <view class="myxz-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="top" hover-class="none" hover-stop-propagation="false">
+      勋章A
+    </view>
+    <view class="bottom" hover-class="none" hover-stop-propagation="false">
+      <view wx:for="{{achieveOnes}}" wx:key="index" class="xz-box" hover-class="none" hover-stop-propagation="false">
+        <image class="xz-img" src="{{item.src}}" />
+        <rich-text class="label" name = 'span'>
+          {{item.label}}
+        </rich-text>
+          
+      </view>
+        
+        
+    </view>
+      
+      
+  </view>
+</view>
+  

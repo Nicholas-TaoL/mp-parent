@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index",
+    "top-detal": "/components/payTopDetail/index"
+  }
+}

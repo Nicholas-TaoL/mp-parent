@@ -1,0 +1,95 @@
+/**index.wxss**/
+.list-ctn {
+  height: 100%;
+  overflow-y:hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tab-wrap{
+  height: 63rpx;
+  background: #fff;
+  display: flex;
+  box-shadow: 0px 1px 8px rgba(194,195,197,.2);
+  font-size:30rpx;
+  align-items: center;
+  font-family:Adobe Heiti Std R;
+  font-weight:normal;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  z-index: 1111;
+}
+.swiper-tab {
+  flex: 1;
+  text-align: center;
+  height: 63rpx;
+  line-height: 63rpx;
+  display: flex;
+  flex-flow: row;
+  box-sizing: border-box;
+}
+.swiper-tab-item {
+  width: 30%; 
+  color:#434343;
+}
+.active {
+  color:#F7931E;
+  border-bottom: 4rpx solid #F7931E;
+}
+swiper {
+  text-align: center;
+  height: 314rpx;
+  box-sizing: border-box;
+}
+.swiper-ctn {
+  height: 100%;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* margin-top: 70rpx; */
+}
+.swiper-ctn swiper-item{
+  overflow-y: auto;
+}
+.introduce{
+
+  background-color: rgba(246,246,246,1);
+  padding-bottom: 70rpx;
+  overflow-y: auto;
+}
+
+.achieve-wrap {
+  height: 100%;
+}
+.top-title {
+  display: flex;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding-left: 25rpx;
+  align-items: center;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color:rgba(51,51,51,1);
+}
+.order-scroll {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: forestgreen; */
+}
+.scroll-bottom {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 20rpx;
+  background-color: #F7931E;
+}
+.content-wrap{
+  flex: 1;
+  background: salmon;
+}

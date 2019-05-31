@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "setting-item": "/components/setting/index",
+    "show-dialog": "/components/dialog/index",
+    "show-toast": "/components/toast/index"
+  }
+}

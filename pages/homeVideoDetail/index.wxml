@@ -1,0 +1,175 @@
+<view class="detail-ctn" hover-class="none" hover-stop-propagation="false">
+  
+  <scroll-view class="scroll-ctn scroll-{{isShowModel}}" scroll-y="true" bindscroll="scroll" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+     <view wx:if="{{idTopFixedShow}}" class="fixed-top" hover-class="none" hover-stop-propagation="false">
+          <swiper 
+            class = "swiper-tab" 
+            current = "{{currentTab}}" 
+            duration = "300"  
+            bindchange = "swiperTab"
+            display-multiple-items = '{{multipleItems}}'
+          >
+          <swiper-item 
+            bind:tap = "changeTab" 
+            data-tab = '{{index}}' 
+            class = 'swiper-tab-item' 
+            wx:for="{{tabs}}" 
+            wx:for-item="item" 
+            wx:for-index="index" 
+            wx:key="index"
+          >
+            <view class="introduce active-{{index===clickTab}}">
+              {{item.title }}
+            </view>
+            <view class="line line-{{index===clickTab}}" hover-class="none" hover-stop-propagation="false">
+            </view>
+          </swiper-item>
+        </swiper>
+    </view>
+      <view class="top-banner" hover-class="none" hover-stop-propagation="false">
+        <swiper
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}"
+          interval="{{interval}}"
+          duration="{{duration}}"
+        >
+          <block wx:for="{{imgUrls}}" wx:for-index="index" wx:key="index">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image"/>
+              <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+      <view id = 'tab-wrap' class="tabs" hover-class="none" hover-stop-propagation="false">
+        <swiper 
+          class = "swiper-tab" 
+          current = "{{currentTab}}" 
+          duration = "300"  
+          bindchange = "swiperTab"
+          display-multiple-items = ' {{multipleItems}}'
+        >
+        <swiper-item 
+          bind:tap = "changeTab" 
+          data-tab = '{{index}}' 
+          class = 'swiper-tab-item' 
+          wx:for="{{tabs}}" 
+          wx:for-item="item" 
+          wx:for-index="index" 
+          wx:key="index"
+        >
+          <view class="introduce active-{{index == clickTab}}">
+            {{item.title}}
+          </view>
+          <view class="line line-{{index == clickTab}}" hover-class="none" hover-stop-propagation="false">
+          </view>
+        </swiper-item>
+      </swiper>
+      
+      <view bind:tap="goToListDetail" data-item = '{{item}}' wx:for="{{lists}}" wx:for-index="index" wx:key="index" class="list-item" hover-class="none" hover-stop-propagation="false">
+        <view class="img-wrap" hover-class="none" hover-stop-propagation="false">
+          <image src="{{item.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        </view>
+        <view class="item-right-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="item-left" hover-class="none" hover-stop-propagation="false">
+            <view class="title ellipsis" hover-class="none" hover-stop-propagation="false">
+              {{item.title}}
+            </view>
+            <view class="msg" hover-class="none" hover-stop-propagation="false">
+              <view class="play-nums" selectable="false" space="false" decode="false">
+                {{item.sign_number}} 次播放
+              </view>
+              <view class="play-time" selectable="false" space="false" decode="false">
+                {{item.classtime}}
+              </view>
+              <view wx:if="{{item.sell_type !== 1}}" class="play-state" hover-class="none" hover-stop-propagation="false">
+                试听
+              </view>
+            </view>
+          </view>
+          <view class="item-right" hover-class="none" hover-stop-propagation="false">
+            <image data-item = '{{item}}' class="play-img-btn" src="{{basUrl}}/paly-gray.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{lists.length == 0}}" class="no-message" hover-class="none" hover-stop-propagation="false">
+        <image class="no-message-img" src="/images/no-message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+          
+        </image>
+        暂无数据
+      </view>   
+      </view>
+    </scroll-view>
+    
+    <view wx:if="{{pay_info.is_pay == 0}}"  class="bottom-wrap" hover-class="none" hover-stop-propagation="false">
+      <view class="share-wrap" hover-class="none" hover-stop-propagation="false">
+        <image class="share-img" src="{{basUrl}}/share.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <view class="label" hover-class="none" hover-stop-propagation="false">
+          分享
+        </view>
+        <button open-type="share" class="share-btn"></button>
+      </view>
+      <view bind:tap="buyTap" class="buy-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="p-d-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="price-wrap" hover-class="none" hover-stop-propagation="false">   
+            <view class="orange-price" hover-class="none" hover-stop-propagation="false">
+              ￥{{pay_info.origin_price}} 
+            </view>
+            <view class="vip-price" hover-class="none" hover-stop-propagation="false">
+              ￥{{pay_info.price}} 
+            </view>
+          </view>
+          <view  class="buy-des-wrap" hover-class="none" hover-stop-propagation="false">
+            购买本专栏
+          </view>
+        </view>
+           
+      </view>
+        
+    </view>
+      
+  <view wx:if="{{isShowModel}}" class="bottom-model" hover-class="none" hover-stop-propagation="false">
+    
+  </view>
+  <view animation = '{{modelAnimation}}' class="model-ctontent" hover-class="none" hover-stop-propagation="false">
+    <block wx:if="{{isShowModel}}">
+      <view class="pay-title" hover-class="none" hover-stop-propagation="false">
+        确认付款
+        <image bind:tap = 'closedTap' class="closed-img" src="{{basUrl}}/closed.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      </view>
+      <view class="price" hover-class="none" hover-stop-propagation="false">
+        {{pay_info.price}} 
+      </view>
+      <view class="pay-des" hover-class="none" hover-stop-propagation="false">
+        <view class="label" hover-class="none" hover-stop-propagation="false">
+          付款内容
+        </view>
+        <view class="l-des" hover-class="none" hover-stop-propagation="false">
+          {{pay_info.title}}
+        </view>
+          
+      </view>
+      <view class="pay-des" hover-class="none" hover-stop-propagation="false">
+        <view class="label" hover-class="none" hover-stop-propagation="false">
+          付款方式
+        </view>
+        <view class="l-des" hover-class="none" hover-stop-propagation="false">
+          <image class="payed-img" src="{{basUrl}}/weixin.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          <view class="label" hover-class="none" hover-stop-propagation="false">
+            微信支付
+          </view>
+        </view>
+      </view>
+      <view bind:tap = 'payed' class="payed-btn" hover-class="none" hover-stop-propagation="false">
+          立即付款
+      </view>
+    </block>
+        
+  </view>
+
+      
+
+</view>
+
+  

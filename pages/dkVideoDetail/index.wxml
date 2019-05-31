@@ -1,0 +1,68 @@
+<view class="detail-ctn" hover-class="none" hover-stop-propagation="false">
+  
+  <scroll-view class="scroll-ctn scroll-{{isShowModel}}" scroll-y="true" bindscroll="scroll" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+    
+      <view class="top-banner" hover-class="none" hover-stop-propagation="false">
+        <swiper
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}"
+          interval="{{interval}}"
+          duration="{{duration}}"
+        >
+          <block wx:for="{{imgUrls}}" wx:for-index="index" wx:key="index">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image"/>
+              <button wx:if="{{!isLogin}}" class="mask-wrap" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+
+      <view id = 'tab-wrap' class="tabs" hover-class="none" hover-stop-propagation="false">
+       
+      
+      <view catch:tap="goToListDetail" data-item = '{{item}}' wx:for="{{lists}}" wx:for-index="index" wx:key="index" class="list-item" hover-class="none" hover-stop-propagation="false">
+        <view class="img-wrap" hover-class="none" hover-stop-propagation="false">
+          <image src="{{item.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        </view>
+        <view class="item-right-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="item-left" hover-class="none" hover-stop-propagation="false">
+            <view class="title ellipsis" hover-class="none" hover-stop-propagation="false">
+              {{item.title}}
+            </view>
+            <view class="msg" hover-class="none" hover-stop-propagation="false">
+              <view class="play-nums" selectable="false" space="false" decode="false">
+                {{item.sign_number}} 次播放
+              </view>
+              <view class="play-time" selectable="false" space="false" decode="false">
+                {{item.classtime}}
+              </view>
+              <view wx:if="{{item.sell_type !== 1}}" class="play-state" hover-class="none" hover-stop-propagation="false">
+                试听
+              </view>
+            </view>
+          </view>
+          <view class="item-right" hover-class="none" hover-stop-propagation="false">
+            <image data-item = '{{item}}' class="play-img-btn" src="{{basUrl}}/paly-gray.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{lists.length == 0}}" class="no-message" hover-class="none" hover-stop-propagation="false">
+        <image class="no-message-img" src="/images/no-message.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+          
+        </image>
+        暂无数据
+      </view>   
+      </view>
+    </scroll-view>
+      
+  <view wx:if="{{isShowModel}}" class="bottom-model" hover-class="none" hover-stop-propagation="false">
+    
+  </view>
+ 
+
+      
+
+</view>
+
+  

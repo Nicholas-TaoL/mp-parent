@@ -1,0 +1,28 @@
+/**index.wxss**/
+.item {
+  height: 110rpx;
+  border-bottom: 1px solid rgba(240,240,240,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding: 0 25rpx 0 33rpx;
+}
+.item-left {
+  display: flex;
+}
+.img {
+  width: 48rpx;
+  height: 48rpx;
+}
+.label {
+  padding-left: 26rpx;
+  line-height: 18rpx;
+}
+.next-img{
+  width: 9rpx;
+  height: 18rpx;
+}

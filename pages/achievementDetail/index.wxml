@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="achieve-ctn">
+  <achievement-detail ></achievement-detail>
+  <view class="bottom-t-btn" hover-class="none" hover-stop-propagation="false">
+      <view class="left-btn" bind:tap = 'saveImageToPhone'>
+        <image class="save" src="{{basUrl}}/xiazai.png"/>
+        <rich-text class="save-label" name = 'span'>
+          保存
+        </rich-text>
+      </view>
+      <button open-type="share" class="left-btn">
+        <image class="save" src="{{basUrl}}/fenxiang.png"/>
+        <rich-text class="save-label" name = 'span'>
+          分享
+        </rich-text>
+      </button>
+  </view>
+</view>
+  

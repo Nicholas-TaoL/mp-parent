@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="wallert-ctn" >
+  <view class="tab-item-wrap" wx:for="{{bis}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="item">
+      <rich-text class="num num_{{index}}" name = 'span'>
+        {{item.merit}}
+      </rich-text>
+      <rich-text class="label" name = 'span'>
+        {{item.name}}
+      </rich-text>
+    </view>
+      
+  </view>
+    
+</view>
+  
+  

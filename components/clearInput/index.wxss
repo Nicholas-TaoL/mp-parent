@@ -1,0 +1,50 @@
+.form-ctn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 39rpx 36rpx 64rpx;
+  background-color: aqua;
+}
+.name-wrap {
+  height: 100rpx;
+  width: 100%;
+  border:1px solid rgba(154,154,154,.6);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 14rpx;
+  margin-bottom: 30rpx;
+}
+.left-img {
+  height: 56rpx;
+  width: 48rpx;
+  margin-right: 15rpx;
+}
+.v-line {
+  height: 56rpx;
+  width: 1rpx;
+  background:rgba(163,161,161,.8);
+}
+.label ,.weui-input{
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+.input-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hide{
+  opacity: 0;
+}
+.show{
+  opacity: 1;
+}
+

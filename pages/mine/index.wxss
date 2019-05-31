@@ -1,0 +1,115 @@
+/**index.wxss**/
+page{
+  height: auto;
+  padding-bottom: 20rpx;
+  background:rgba(246,246,246,1);
+}
+.mine-ctn{
+  display: flex;
+  flex-direction: column;
+  background:rgba(246,246,246,1);
+  height: 100%;
+  padding-bottom: 98rpx;
+}
+.top-ctn{
+  height: 300rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  background: #fff;
+
+}
+.head-portrait{
+  height: 124rpx;
+  width: 124rpx;
+  border-radius: 50%;
+  background: #ddd;
+}
+.name{
+  font-size: 36rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color: rgba(51,51,51,1);
+  line-height: 20rpx;
+  padding-left: 26rpx;
+}
+.my-wallet-ctn{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 21rpx;
+  height: 250rpx;
+  background: #fff;
+  box-shadow: 0px 1px 8px rgba(194,195,197,.2);
+}
+.apply-ctn{
+  height: 144rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.apply-btn{
+  width: 93.6%;
+  height: 100rpx;
+  background: #F7931E;
+  border-radius: 50rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  font-family: STHeiti;
+  font-weight: 400;
+}
+.bottom-ctn {
+  box-shadow: 0px 1px 8px rgba(194,195,197,.2);
+}
+.bottom-item-wrap {
+  background: #fff;
+}
+.wallet-top{
+  display: flex;
+  padding-left: 33rpx;
+  height: 100rpx;
+  border-bottom: 1px solid rgba(240,240,240,1);
+  align-items: center;
+  line-height: 18rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: bold;
+}
+
+.wallet {
+  width: 47rpx;
+  height: 39rpx;
+  margin-right: 20rpx;
+}
+.tip {
+  margin-left: 10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.wallet-bottom{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.wallet-b-item{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  flex:1;
+  padding:31rpx 0;
+}
+.wallet-val, wallet-label{
+  font-size: 30rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: bold;
+  color: #333;
+}
+.wallet-label {
+  color: #999;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "list-item": "/components/mine/index",
+    "bottom-tabBar": "/components/bottomTabBar/index",
+    "show-dialog": "/components/copyWxDialog/index",
+    "show-toast": "/components/toast/index"
+  }
+}

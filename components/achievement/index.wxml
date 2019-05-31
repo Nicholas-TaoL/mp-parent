@@ -1,0 +1,29 @@
+<view class="achievement-ctn" hover-class="none" hover-stop-propagation="false">
+ 
+  <view wx:if="{{type === 'myxz'}}" class="myxz-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="top" hover-class="none" hover-stop-propagation="false">
+      勋章A
+    </view>
+    <view class="bottom" hover-class="none" hover-stop-propagation="false">
+      
+    </view>
+      
+      
+  </view>
+
+  <view  class="myzs-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="topImg-wrap" >
+      <image class="active-img" src="{{basUrl}}/achievebg.png" />
+    </view>
+    <view class="content-wrap" >
+      <rich-text class="title1" name = 'span'>
+        如此优秀的你学完了
+      </rich-text>
+      <rich-text class="title2" name = 'span'>
+        如何做好孩子的情绪教养
+      </rich-text>
+    </view>
+  </view>
+    
+</view>
+  

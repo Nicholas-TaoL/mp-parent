@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container setting-ctn">
+
+  <view class="list-wrap" hover-class="none" hover-stop-propagation="false">
+
+    <setting-item bind:tap="handleitem" data-item = '{{item}}' wx:for="{{lists}}" wx:for-item="item" wx:for-index="index" wx:key="index" item = '{{item}}'></setting-item>
+
+  </view>
+
+  <view class="out-btn">退出登录</view>
+  <!-- <show-dialog bind:close = 'closeCallBack' hide='{{hide}}' hidden="{{hide}}"></show-dialog> -->
+  <!-- <show-toast toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide}}' hidden="{{hide}}"></show-toast> -->
+</view>
+

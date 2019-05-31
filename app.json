@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/class/index",
+    "pages/mine/index",
+    "pages/homeDetail/index",
+    "pages/homeVideoDetail/index",
+    "pages/dkVideoDetail/index",
+    "pages/groupDpayDetail/index",
+    "pages/videoPlayDetail/index",
+    "pages/payed/index",
+    "pages/buyed/index",
+    "pages/share/index",
+    "pages/wallet/index",
+    "pages/regimentalCommander/index",
+    "pages/order/index",
+    "pages/myGroup/index",
+    "pages/setting/index",
+    "pages/opinions/index",
+    "pages/achievement/index",
+    "pages/achievementDetail/index",
+    "pages/welltDetail/index",
+    "pages/tuanzhangrw/index",
+    "pages/fixedTop/index"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wx02c7aa9baf726a17"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "blue",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#fff",
+    "onReachBottomDistance":50
+  },
+   "tabBar": {
+    "color": "#333",
+    "selectedColor": "#F7931E",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/work_01.png",
+        "selectedIconPath": "images/work_02.png",
+        "selected": true
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "images/my_01.png",
+        "selectedIconPath": "images/my_02.png",
+        "selected": false
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,144 @@
+<view class="playrt-ctn" hover-class="none" hover-stop-propagation="false">
+  <view class="player-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="top-img-wrap" hover-class="none" hover-stop-propagation="false">
+      <image class="banner-img" src="{{produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="true" binderror="" bindload="" />
+      <view class="botom-des ellipsis" hover-class="none" hover-stop-propagation="false">
+        已更新 {{update_num}}期
+      </view>
+    </view>
+    <view class="title" hover-class="none" hover-stop-propagation="false">
+      {{title}}
+    </view>
+    <view class="progresswrap">
+      <slider class="slider" bindchange="sliderChange" bindchanging = 'sliderChanging' value="{{curTimeVal}}" min="{{min}}" max="{{max}}" backgroundColor = '#ccc' selected-color = '#F7931E' block-size = '13' block-color = '#F7931E'/>
+      <view class="bottom-time" hover-class="none" hover-stop-propagation="false">
+        <view class="start-time" selectable="false" space="false" decode="false">
+          {{startTime}}
+        </view>
+        <view class="end-time" selectable="false" space="false" decode="false">
+          {{endTime}}
+        </view>
+      </view>
+    </view>
+    <view class="player-btn-wrap" hover-class="none" hover-stop-propagation="false">
+      <image bind:tap="menuTap" data-item = '0' class="menu" src="{{basUrl}}/menu.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      <view class="play-ctn" hover-class="none" hover-stop-propagation="false">
+        <image bind:tap="preTap" class="pre" src="{{bCurrent == 0 ? 'https://api.qiandengli.com/attachment/wx_images/npro.png': 'https://api.qiandengli.com/attachment/wx_images/hpro.png' }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image bind:tap="playerTap" class="playerBtn play-{{isPlay}}" src="{{!isPlay?'https://api.qiandengli.com/attachment/wx_images/player.png':'https://api.qiandengli.com/attachment/wx_images/stop.png'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <image bind:tap = 'nextTap' class="pre" src="{{bCurrent==multipleItems-1 ? 'https://api.qiandengli.com/attachment/wx_images/nnext.png': 'https://api.qiandengli.com/attachment/wx_images/hnext.png'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      </view>
+        
+      
+      <!-- <view bind:tap = 'bsTap' class="bs" hover-class="none" hover-stop-propagation="false">
+        倍速
+      </view>           -->
+    </view>
+
+  </view>
+  <view animation="{{animation}}" class="bottom-detail" hover-class="none" hover-stop-propagation="false">
+    <view catch:tap="bottomToggle" class="isTopwrap" hover-class="none" hover-stop-propagation="false">
+      <image catch:tap="bottomToggle" animation="{{circleAnimate}}"  class="isTopImg" src="/images/top.png" />
+    </view>
+    <view class="bottom-detail-wtap fexed-{{idTopFixedShow}}" hover-class="none" hover-stop-propagation="false">
+      <view bind:tap="tabSelect" data-tab = '{{item}}' wx:for="{{tabs}}" wx:for-index="index" wx:key="index" class="tab-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="tab-item active-{{index === currentTab}}" hover-class="none" hover-stop-propagation="false">
+          {{item.title}}
+        </view>
+        <view class="bottom-line line-{{index === currentTab}}" hover-class="none" hover-stop-propagation="false">
+        </view>
+      </view>
+    </view>
+     <view wx:if="{{currentTab === 0}}" class="tab-item-wrap" hover-class="none" hover-stop-propagation="false">
+            <view class="top-img-wrp" hover-class="none" hover-stop-propagation="false">
+              <image class="top-img" src="{{basUrl}}/qwg.png" mode="aspectFit|aspectFill|widthFix" lazy-load="true" binderror="" bindload="" />
+            </view> 
+              <rich-text class="word-des-t" nodes="{{wordDesTitle}}"></rich-text>
+              <rich-text class="word-des-list" nodes="{{wordDes}}"></rich-text>    
+              
+    </view>
+            <view wx:else class="tab-item-wrap" hover-class="none" hover-stop-propagation="false">
+              <view class="top-write" hover-class="none" hover-stop-propagation="false">
+                <image class="header-img" src="{{head_portrait}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                <view class="write-wrap" hover-class="none" hover-stop-propagation="false">
+                  <view class="write-btn" hover-class="none" hover-stop-propagation="false">
+                    <image class="w-icon" src="{{basUrl}}/xie.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                    <view bind:tap="writeTap" class="placehoder" hover-class="none" hover-stop-propagation="false">
+                      点这里，说两句
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view wx:for="{{plLists}}" wx:for-index="indx" wx:key="indx" class="pj-list" hover-class="none" hover-stop-propagation="false">
+                <view class="pj-left" hover-class="none" hover-stop-propagation="false">
+                  <image class="pj-header-img" src="{{item.head_portrait}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                </view>
+                <view class="pj-right-wrap" hover-class="none" hover-stop-propagation="false">
+                  <view class="top-msg" hover-class="none" hover-stop-propagation="false">
+                    <view class="r-top-msg" hover-class="none" hover-stop-propagation="false">
+                      <view class="name" hover-class="none" hover-stop-propagation="false">
+                        {{item.nickname}}
+                      </view>
+                      <view class="time" hover-class="none" hover-stop-propagation="false">
+                        {{item.created_at}}
+                      </view>
+                    </view>
+                    <!-- <view class="r-top-msg-s" hover-class="none" hover-stop-propagation="false">
+                      <image wx:for="{{5}}" class="starts" src="{{basUrl}}/pjstart.png" />
+                    </view> -->
+                  </view>
+                  <view class="pl-wrord" hover-class="none" hover-stop-propagation="false">
+                    {{item.content}}
+                  </view>
+                  <view class="pl-zan" hover-class="none" hover-stop-propagation="false">
+                    <image class="zan" src="{{basUrl}}/zan.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+                    <view class="zan-nums" hover-class="none" hover-stop-propagation="false">
+                      {{item.support}}赞
+                    </view>
+                  </view>
+                </view>
+              </view>
+            
+            <!-- <view class="loading-more" hover-class="none" hover-stop-propagation="false">
+              点击加载更多
+            </view>   -->
+            </view>
+  </view>
+    
+    <view animation = '{{modelAnimation}}' class="bottom-model" hover-class="none" hover-stop-propagation="false">
+      <view  class="bottom-list-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="item-wrap" hover-class="none" hover-stop-propagation="false">
+          
+          <swiper
+            autoplay="{{autoplay}}"
+            vertical="{{true}}"
+            class = 'b-swiper'
+            display-multiple-items = "{{multipleItems}}"
+
+          >
+            <block wx:for="{{lists}}" wx:for-index="index" wx:key="index">
+              <swiper-item bind:tap="menuTap" data-item = '{{item}}' class="b-s-item" style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                <view class="bottom-item" hover-class="none" hover-stop-propagation="false">
+                  <view class="name name-{{bCurrent === index}}" hover-class="none" hover-stop-propagation="false">
+                    {{item.title}}
+                  </view>
+                  <view class="tile-jd" hover-class="none" hover-stop-propagation="false">
+                    时长{{item.classtime}}
+                  </view>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        
+        <view bind:tap="menuTap" data-item = '0' class="bottom-cancel" hover-class="none" hover-stop-propagation="false">
+          取消
+        </view>
+            
+      </view>
+    </view>
+    <alert bind:parentCancel = 'writeTap' bind:parentSend = 'sendTap' wx:if="{{isShowAlert}}"></alert> 
+    <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide2}}'></show-toast>
+ 
+</view>
+
+  

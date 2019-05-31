@@ -1,0 +1,13 @@
+/**index.wxss**/
+page {
+  height: 100%;
+}
+.tab-view {
+  height: 100%;
+}
+.order-ctn{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(246,246,246,1);
+}

@@ -1,0 +1,140 @@
+/**index.wxss**/
+@import '../../public/index';
+page {
+  height: 100%;
+}
+.tab-view {
+  height: 100%;
+}
+.order-ctn{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(246,246,246,1);
+}
+/**index.wxss**/
+.list-ctn {
+  height: 100%;
+  overflow-y:hidden;
+}
+.tab-wrap{
+  height: 63rpx;
+  background: #fff;
+  display: flex;
+  box-shadow: 0px 1px 8px rgba(194,195,197,.2);
+  font-size:30rpx;
+  align-items: center;
+  font-family:Adobe Heiti Std R;
+  font-weight:normal;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  z-index: 1111;
+}
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 63rpx;
+  line-height: 63rpx;
+  display: flex;
+  flex-flow: row;
+  box-sizing: border-box;
+}
+.swiper-tab-item {
+  width: 30%; 
+  color:#434343;
+}
+.active {
+  color:#F7931E;
+  border-bottom: 4rpx solid #F7931E;
+}
+.swiper-ctn {
+  text-align: center;
+  height: 314rpx;
+  box-sizing: border-box;
+}
+.swiper-ctn {
+  height: 100%;
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* margin-top: 70rpx; */
+}
+.swiper-ctn swiper-item{
+  overflow-y: auto;
+}
+.introduce{
+  height: 100%;
+  background-color: rgba(246,246,246,1);
+  overflow-y: auto;
+}
+
+.achieve-wrap {
+  height: 100%;
+}
+.top-title {
+  display: flex;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding-left: 25rpx;
+  align-items: center;
+  font-size: 36rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color:rgba(51,51,51,1);
+}
+.order-scroll {
+  height: 100%;
+  /* background-color: forestgreen; */
+}
+.scroll-bottom {
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 20rpx;
+}
+.item-wrap {
+  height: 50prx;
+}
+
+.list-item-wrap {
+  width: 100%;
+  height: 260rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  display: flex;
+  padding: 0 24rpx;
+  align-items: center;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  background-color: #fff;
+}
+.left-img {
+  width:150rpx;
+  height:200rpx;
+  background:#EBEBEB;
+  border-radius:6px;
+}
+.right-wrap{
+  width: 100%;
+  height:200rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0 24rpx;
+}
+.item-titile {
+  font-size:32rpx;
+  color:rgba(51,51,51,1);
+}
+.item-msg {
+  font-size:26rpx;
+  color:rgba(153,153,153,1);
+  text-align: left;
+  padding-right: 24rpx;
+}

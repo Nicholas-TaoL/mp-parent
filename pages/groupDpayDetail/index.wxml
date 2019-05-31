@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="payed-ctn">
+  <view class="top-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="top-left-img-wrap" hover-class="none" hover-stop-propagation="false">
+      <image class="top-left-img" src="{{info.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+      
+      </image>
+    </view>
+    <view class="top-right-wrap" hover-class="none" hover-stop-propagation="false">
+      <view class="top-r-title-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="t-title" hover-class="none" hover-stop-propagation="false">
+          {{info.title}}
+        </view>
+        <!-- <view class="is-tuanzhang" hover-class="none" hover-stop-propagation="false">
+          团长
+        </view> -->
+      </view>
+      <view class="t-des" hover-class="none" hover-stop-propagation="false">
+          {{info.description}}
+        </view>
+      <view class="top-r-good-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="t-r-img-wrap" hover-class="none" hover-stop-propagation="false">
+          <image class="t-r-img" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            
+          </image>
+        </view>
+        <view class="t-r-good" hover-class="none" hover-stop-propagation="false">
+          {{info.comment}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="middle-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="end-time" hover-class="none" hover-stop-propagation="false">
+      活动剩余 <text class="end-red-time" selectable="false" space="false" decode="false">  {{domValue}} </text> 结束
+    </view>
+    <view class="member-wrap" hover-class="none" hover-stop-propagation="false">
+      
+      <view wx:for="{{info.members}}" wx:for-index="idx" wx:key="idx" class="img-wrap-tuan" hover-class="none" hover-stop-propagation="false">
+        <image  class="tx-img" src="{{item.head_portrait}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+        
+        </image>
+        <view wx:if="{{item.is_tuanzhan == 1}}" class="is-tuanzhang" hover-class="none" hover-stop-propagation="false">
+          团长
+        </view>
+      </view>
+        
+    </view>
+    <view class="end-nums" hover-class="none" hover-stop-propagation="false">
+      还差 <text class="red-nums" selectable="false" space="false" decode="false"> {{info.member_cha}} </text>人成团
+    </view>
+    <view class="ptzhing" hover-class="none" hover-stop-propagation="false">
+      拼团中
+    </view>
+  </view>
+
+  <view class="bottom-wrap" hover-class="none" hover-stop-propagation="false">
+    差{{info.member_cha}}人即成团，邀请好友 >>
+  </view>
+  <button class="bottom-share-btn" open-type="share"></button>
+
+</view>

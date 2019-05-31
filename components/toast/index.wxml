@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="mask-wrap" hover-class="none" hover-stop-propagation="false">
+  <view class="mask-content-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="mast-top" hover-class="none" hover-stop-propagation="false">
+      <image class="status-img" src="{{type === 'success' ?'/images/success.png':'/images/error.png'}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      <rich-text class="title" name = 'span'>
+        {{type === 'success' ? '操作成功！' : '火炬提示！'}}
+      </rich-text>
+      <view class="dis-msg" name = 'span'>
+        {{desMsg}}
+      </view>
+          
+    </view>
+      
+  </view>
+    
+</view>
+  
+  

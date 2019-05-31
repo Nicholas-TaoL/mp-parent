@@ -1,0 +1,34 @@
+<view class="rw-ctn" hover-class="none" hover-stop-propagation="false">
+  <view class="banner" hover-class="none" hover-stop-propagation="false">
+    
+  </view>
+  <view class="center-wrap" hover-class="none" hover-stop-propagation="false">
+    <image class="center" src="{{basUrl}}/center.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />    
+  </view>
+
+
+  <view wx:for="{{3}}"  class="rw-item" hover-class="none" hover-stop-propagation="false">
+    <view class="item-left" hover-class="none" hover-stop-propagation="false">
+      <view class="title-wrap" hover-class="none" hover-stop-propagation="false">
+        <view class="v-line" hover-class="none" hover-stop-propagation="false"></view>
+        <view class="top-title" hover-class="none" hover-stop-propagation="false">
+          邀请好友
+        </view>
+      </view>
+      <view class="jlmsg" hover-class="none" hover-stop-propagation="false">
+        <image class="jb-img" src="{{basUrl}}/jinbi.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <view class="label" hover-class="none" hover-stop-propagation="false">
+          每邀请1人可得1.5金币
+        </view>  
+      </view>
+    </view>
+    <view class="item-right" hover-class="none" hover-stop-propagation="false">
+      <view class="share-btn" hover-class="none" hover-stop-propagation="false">
+        去邀请
+      </view>
+    </view>
+  </view>
+    
+      
+</view>
+  

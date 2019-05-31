@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="opinion-ctn">
+  <view class="textarea-wrap">
+    <textarea class="opiniontxt" maxlength = '300' bindinput="bindKeyInput" auto-height placeholder="请提出您宝贵的意见与建议" />
+    <view class="num">
+      {{opinions.length}}/{{300-opinions.length}}
+    </view>
+      
+  </view>
+  <view class="pic-wrap">
+    <view class="pic-label">
+      问题截图(选填，最多上传9张)
+    </view>
+    <view class="pic-img-wrap" hover-class="none" hover-stop-propagation="false">
+      <view class="img-wrap">
+      <view wx:for="{{picUrls}}" wx:for-index="index" wx:key="index" class="add-img-wrap" hover-class="none" hover-stop-propagation="false">
+         <image  class="pic-images-item" src="{{item}}" />
+         <image bind:tap="delImg" data-index = '{{index}}'  class="close-img" src="{{basUrl}}/circle-close.png" />
+      </view>
+        
+      </view>
+      <view wx:if="{{!maxLength}}" class="img-btn" bind:tap="bindChooiceProduct">
+        <image class="picture" src="{{basUrl}}/picture.png" />
+      </view>
+        
+    </view>
+      
+  </view>
+  <view class="submit-wrap">
+    <view bind:tap="postSuggest" class="submit" hover-class="none" hover-stop-propagation="false">
+      提交
+    </view>
+      
+  </view>
+    
+  <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide2}}'></show-toast>
+
+</view>
+  

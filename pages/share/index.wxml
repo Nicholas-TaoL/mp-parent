@@ -1,0 +1,36 @@
+<view class="share-ctn" hover-class="none" hover-stop-propagation="false">
+  <view class="top-img" hover-class="none" hover-stop-propagation="false">
+    <image class="img-top" src="{{basUrl}}/share-top.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+  </view>
+  <button class = 'shate-btn' open-type="share">立即邀请 ></button>
+  <view class="bottom-wrap" hover-class="none" hover-stop-propagation="false">
+    <image class="bottom-img" src="{{basUrl}}/share-bg.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <view class="bottom-ctm" hover-class="none" hover-stop-propagation="false">
+      <view class="share-msg-wrap" hover-class="none" hover-stop-propagation="false">
+        <image class="share-msg" src="{{basUrl}}/share-msg.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+        <rich-text class="share-msg-text" name = 'span'>
+          邀请好友活动说明
+        </rich-text> 
+      </view>
+      <view class="bottom-ctn-wrap" hover-class="none" hover-stop-propagation="false">
+          <view wx:for="{{items}}" wx:for-index="index" wx:key="index" class="list-item" hover-class="none" hover-stop-propagation="false">
+            <view class="circle" hover-class="none" hover-stop-propagation="false">
+              {{index+1}}
+            </view>
+            <rich-text class="label" name = 'span'>
+              {{item}}
+            </rich-text>
+                
+          </view>
+            
+      </view>
+
+        
+      
+        
+    </view>
+        
+  </view>
+    
+</view>
+  

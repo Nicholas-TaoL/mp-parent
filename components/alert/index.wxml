@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="mask-wrap" hover-class="none" hover-stop-propagation="false">
+  <view class="mask-content-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="title" hover-class="none" hover-stop-propagation="false">
+      评论一下
+    </view>
+    <view class="text-area" hover-class="none" hover-stop-propagation="false">
+      <textarea bindinput = 'inputing' value="{{inputValue}}" placeholder="欢迎发表您的观点，评论后将对所有已 够用户可见" focus="{{focus}}" />
+    </view>
+     <view class="bottom-wrap" hover-class="none" hover-stop-propagation="false">
+       <view bind:tap="cancelBtnTap" class="cancel-btn left-ling" hover-class="none" hover-stop-propagation="false">
+         取消
+       </view>
+       <view bind:tap="sendBtnTap" class="cancel-btn send-btn isSend-{{inputValue.length===0?'err':'ok'}}" hover-class="none" hover-stop-propagation="false">
+         发送
+       </view>
+         
+     </view>
+          
+     
+      
+  </view>
+    
+</view>
+  
+  

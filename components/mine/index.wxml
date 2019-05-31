@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<!-- <view wx:for="{{mineLists}}" wx:for-index="index" wx:for-item="item" wx:key="index" class="item-ctn" hover-class="none" hover-stop-propagation="false"> -->
+  <view class="item border-{{item.bottomLine}}" hover-class="none" hover-stop-propagation="false">
+    <view class="item-left" hover-class="none" hover-stop-propagation="false">
+      <image class="img" src="{{item.icon}}" />
+      <text class="label">
+        {{item.label}}
+      </text>
+    </view>
+    <view class="item-right" hover-class="none" hover-stop-propagation="false">
+      <image class="next-img" src="{{basUrl}}/next.png" />
+    </view>
+  </view>
+<!-- </view> -->

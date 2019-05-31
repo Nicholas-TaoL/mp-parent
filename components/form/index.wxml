@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="form-ctn">
+  <view class="name-wrap">
+    <image class="left-img" src="/images/name.png"/>
+    <view class="v-line"></view>
+    <view class="label">
+      姓名：
+    </view>
+    <view class="input-wrap">
+      <input class="weui-input" bindinput="watchName" value="{{name}}"  auto-focus placeholder="请输入名字"/>
+      <block>
+        <icon bind:tap="clearName" type="clear" size="20" class="hide {{name.length ===0 ? '' : 'show'}}" />
+      </block>
+    </view>  
+  </view>
+  <view class="name-wrap">
+    <image class="left-img" src="/images/phone.png"/>
+    <view class="v-line"></view>
+    <view class="label">
+      手机号：
+    </view>
+    <view class="input-wrap">
+      <input maxlength = '11' type="number" class="weui-input" bindinput="watchPhone" value="{{phone}}" placeholder="请输入手机号"/>
+      <block>
+        <icon bind:tap="clearPhone" type="clear" size="20" class="hide {{phone.length ===0 ? '' : 'show'}}" />
+      </block>
+    </view>  
+  </view>
+  <view class="code-ctn">
+    <view class="code-left">
+      <image class="left-img" src="/images/phone.png"/>
+    <view class="v-line"></view>
+    <view class="label">
+      验证码：
+    </view>
+    <view class="input-wrap">
+      <input maxlength = '6' class="weui-input" bindinput="watchCode" value="{{code}}" placeholder="请输入验证码"/>
+      <block>
+        <icon bind:tap="clearCode" type="clear" size="20" class="hide {{code.length ===0 ? '' : 'show'}}" />
+      </block>
+    </view> 
+    </view>
+    <view class="code-wrap">
+      <rich-text wx:if="{{!isSendCode}}" class="code" name = 'span' bind:tap="getCode">
+        获取验证码
+      </rich-text>
+      <rich-text wx:else class="code" name = 'span'>
+        {{time}}s
+      </rich-text>
+    </view>
+  </view>
+  <view class="name-wrap">
+    <image class="left-img" src="/images/wx.png"/>
+    <view class="v-line"></view>
+    <view class="label">
+      微信号：
+    </view>
+    <view class="input-wrap">
+      <input class="weui-input" bindinput="watchwx" value="{{wx}}" placeholder="请输入微信号"/>
+      <block>
+        <icon bind:tap="clearwx" type="clear" size="20" class="hide {{wx.length ===0 ? '' : 'show'}}" />
+      </block>
+    </view>  
+  </view>
+  <view class="introduce-ctn">
+    <view class="introduce-top">
+      <image class="left-img" src="/images/jl.png"/>
+      <view class="v-line"></view>
+      <view class="label">
+        个人简介(从业经历、社群资源等)：
+      </view>
+    </view>
+    <view class="text-wrap">
+      <textarea wx:if = '{{!isHid}}' maxlength = '300' bindinput	= 'textIntroduce' value="{{introduce}}" placeholder="请输入个人简历"  />
+    </view>
+    <view class="num-wrap">
+      {{textNum}}/{{300-textNum}}
+    </view>
+  </view>
+  <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide2}}'></show-toast>
+
+</view>
+  
+  

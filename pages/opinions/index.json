@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index",
+    "tabbar-view": "/components/bottomTabBar/index",
+    "show-toast": "/components/toast/index"
+  }
+}

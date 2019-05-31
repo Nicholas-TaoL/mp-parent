@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="commander-ctn">
+  <scroll-view class="page-ctn" scroll-x="false" scroll-y="true">
+    <view class="top-ctn">
+      <image class="top-img" src="{{basUrl}}/topimg.png"/>
+      <view bind:tap="onRuleToast" class="rule-wrap" hover-class="none" hover-stop-propagation="false">
+        <rich-text class="rule-label" name = 'span'>
+          团长规则
+        </rich-text>
+        <image class="rule-img" src="{{basUrl}}/circle-next.png" />
+      </view>
+         <form cutdown = '{{cutdown}}' bind:postCode = 'apiPostCode' bind:parentEvent = 'inputMsg' isHid = '{{isHid}}' name = '{{msg}}'></form>
+    </view>
+    <view class="bottom-ctn" bind:tap="onApplyCommander">
+      申请成为社群团长
+    </view>
+  </scroll-view>
+  <dialog bind:parentEvent='onParentEvent' isHid = '{{isHid}}' wx:if = '{{showDialog}}' showDialog = '{{showDialog}}'></dialog>
+  <!-- <show-dialog desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide1}}" data-type = '1' bind:close = 'closeCallBack' hide='{{hide1}}'></show-dialog> -->
+  <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide2}}'></show-toast>
+
+</view>

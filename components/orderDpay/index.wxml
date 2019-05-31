@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="dpay-ctn">
+  <view class="top-wrap" hover-class="none" hover-stop-propagation="false">
+    <rich-text class="time" name = 'span'>
+      {{value.created_at}}
+    </rich-text>
+    <rich-text class="pay-type" name = 'span'>
+      {{value.status === '0' ? '代付款' : value.status === '1' ? '已完成' : '已取消'}}
+    </rich-text>
+  </view>
+  <view class="content-wrap">
+    <image class="header-img" src="{{value.course.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+    <view class="msg">
+      <view class="" hover-class="none" hover-stop-propagation="false">
+        {{value.course.title}}
+      </view>
+      <view class="price" hover-class="none" hover-stop-propagation="false">
+      </view>
+        {{value.price}}
+    </view>  
+  </view>
+  <view wx:if="{{value.status === '0'}}" class="bottom-wrap" hover-class="none" hover-stop-propagation="false">
+    <rich-text class="price" name = 'span'>
+      实付：¥{{value.price}}
+    </rich-text>  
+    <view class="go-pay" catch:tap="onPayed">去付款</view>
+  </view>
+</view>
+  
+  
+  

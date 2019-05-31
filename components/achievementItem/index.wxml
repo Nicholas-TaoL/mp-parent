@@ -1,0 +1,71 @@
+<view class="achieve-item-ctn" wx:if="{{type === 'myzs'}}" hover-class="none" hover-stop-propagation="false">
+  <view class="left-img-wrap">
+    <image class="active-img" src="{{basUrl}}/achievebg.png" />
+    <view class="top-msg">
+      <view class="top-title">
+        父母上岗资格证
+      </view>
+      <view class="top-nickname">
+        郝美丽hmilyxq
+      </view>
+      <view class="top-discrib">
+        于  
+        <rich-text class="top-time" name = 'span'>
+          2019年05月07日
+        </rich-text>
+        完整学习了《夏山学校》课程 
+        <rich-text class="top-time" name = 'span'>
+          如何做好孩子的情绪教养
+        </rich-text>
+      </view>
+      <!-- <view class="top-ts">
+        特授此证书
+      </view> -->
+      <view class="top-sing">
+        <view class="sing-wrap" >
+          张翠花
+        </view>
+      </view>
+      <view class="bottom-sing">
+        <view class="no-wrap" >
+          编号：NO.12345678910111212
+        </view>
+        <view class="teacher" >
+          课程老师
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="right-wrap">
+    <view class="title">
+      2019年03月18日学完了
+    </view>
+    <view class="title2">
+      <rich-text class="school" name = 'span'>
+      《夏山学校》
+      </rich-text>
+      <rich-text class="times" name = 'span'>
+        7课时
+      </rich-text>
+    </view>
+    <view class="detail">
+      查看详情
+    </view>
+        
+    
+      
+  </view>
+    
+</view>
+
+ <view wx:if="{{type === 'myxz'}}" class="myxz-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="top" hover-class="none" hover-stop-propagation="false">
+      勋章A
+    </view>
+    <view class="bottom" hover-class="none" hover-stop-propagation="false">
+      
+    </view>
+      
+      
+  </view>
+  

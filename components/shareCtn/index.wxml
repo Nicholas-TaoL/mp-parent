@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="top-share-ctn" >
+  <view class="top-crn">
+    <view class="line" ></view>
+    <view class="last-time-wrap" >
+      <rich-text class="time-label">
+        距活动结束仅剩
+      </rich-text>
+      <rich-text class="time-value">
+        01:23:59
+      </rich-text>
+    </view>
+    <view class="line" ></view>
+  </view>
+  <view class="middle-ctn">
+    <view class="header-ctn" wx:for="{{3}}" wx:for-index="index" wx:key="index">
+      <image class="header" src="/images/header.png" lazy-load="false" binderror="" bindload="" />
+      <view wx:if="{{index === 0}}" class="group-leader" hover-class="none" hover-stop-propagation="false">
+        团长  
+      </view>
+    </view>   
+  </view>
+  <view class="bottom-ctn" >
+    <button  open-type='share'  class="invitation" hover-class="none" hover-stop-propagation="false">
+      继续邀请好友参团
+    </button>
+  </view>
+    
+</view>
+  

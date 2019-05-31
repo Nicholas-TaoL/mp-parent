@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tab-swiper": "/components/tabChage/index",
+    "show-toast": "/components/toast/index",
+    "alert": "/components/alert/index"
+  }
+}

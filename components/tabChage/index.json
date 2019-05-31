@@ -1,0 +1,9 @@
+{
+  "component":true,
+  "usingComponents": {
+    "order-dpay": "/components/orderDpay/index",
+    "my-group": "/components/myGroup/index",
+    "my-achievement": "/components/achievementItem/index",
+    "my-achievementOne": "/components/achievementOne/index"
+  }
+}

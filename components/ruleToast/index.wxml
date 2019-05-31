@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="t-dialog {{ showDialog ? 't-dialog--show' : '' }}" hover-class="none" hover-stop-propagation="false">
+  <view class="t-dialog__mask" bindtap="toggleDialog" />
+  <view class="t-dialog__container">
+    <view class="content">
+      <view class="top-ctn">
+        <view class="line"></view>
+        <view class="title">
+          团长规则
+        </view>
+        <view class="line"></view>
+      </view>
+      <view class="middle">
+        
+      </view>
+      <view class="bottom" hover-class="none" hover-stop-propagation="false">
+        <view bind:tap="toggleDialog" class="know-btn">
+          我知道了
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+  

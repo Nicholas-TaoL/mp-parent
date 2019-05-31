@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "form": "/components/form/index",
+    "dialog": "/components/ruleToast/index",
+    "show-toast": "/components/toast/index",
+    "show-dialog": "/components/dialog/index"
+
+
+  }
+}

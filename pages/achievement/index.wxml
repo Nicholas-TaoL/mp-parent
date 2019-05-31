@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="order-ctn">
+  <tabView listType = 'achievement' class="tab-view" tabs = '{{tabs}}' currentTab = '{{currentTab}}'></tabView>
+</view>
+  

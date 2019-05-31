@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index"
+  }
+}

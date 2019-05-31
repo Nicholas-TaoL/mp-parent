@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="wallert-list-ctn" >
+  <view bind:tap="handleToDetail" data-item = '{{item}}' wx:for="{{tabs}}" wx:for-index="index" wx:for-item="item" wx:key="index" class="list-item-wrap">
+    <view class="item-left">
+      <image class="icon" src="{{item.icon}}"/>
+      <rich-text class="label" name = 'span'>
+        {{item.label}}
+      </rich-text>
+    </view>
+    <view class="item-right" bind:tap="handleToDetail" data-item = '{{item}}'>
+      <image class="next" src="/images/next.png" />
+        
+    </view>
+      
+      
+  </view>
+    
+    
+</view>
+  
+  

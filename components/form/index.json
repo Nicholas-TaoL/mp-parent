@@ -1,0 +1,6 @@
+{
+  "component":true,
+  "usingComponents": {
+    "show-toast": "/components/toast/index"
+  }
+}

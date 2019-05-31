@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<!-- <view class="list-ctn">
+  <view class="tab-wrap">
+    <view class="swiper-tab">
+      <view wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="swiper-tab-item {{item.current == currentTab?'active':''}}" data-current="{{item.current}}" bindtap="clickTab">{{item.label}}</view>
+    </view>
+  </view>
+  <swiper class="swiper-ctn" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+    <swiper-item class = 'sw1' wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="introduce">
+        <scroll-view class="order-scroll" scroll-y="true" upper-threshold="50" lower-threshold="50" 
+          scroll-top="0" scroll-left="0" scroll-into-view="" scroll-with-animation="true" enable-back-to-top="false" 
+          bindscrolltoupper="orderUpper" bindscrolltolower="orderLower" bindscroll="orderScroll">
+          <view class="scroll-bottom" >
+            加载更多...
+          </view>
+          <order-dpay wx:for="{{item.msgs}}" wx:for-item="value" wx:for-index="index" wx:key="index" value = '{{value}}'></order-dpay>
+          <view class="scroll-bottom" >
+            加载更多...
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+   
+</view> -->
+<scroll-view class="list-ctn" scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+    <view class="tab-wrap">
+        <view class="swiper-tab">
+          <view wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="swiper-tab-item {{item.current == currentTab?'active':''}}" data-current="{{item.current}}" bindtap="clickTab">{{item.label}}</view>
+        </view>
+      </view>
+      <swiper class="swiper-ctn" current="{{currentTab}}" duration="300"  bindchange="swiperTab">
+        <swiper-item class = 'sw1' wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <view class="introduce">
+             <order-dpay wx:for="{{item.msgs}}" wx:for-item="value" wx:for-index="index" wx:key="index" value = '{{value}}'></order-dpay>
+
+            <!-- <scroll-view class="order-scroll" scroll-y="true" upper-threshold="50" lower-threshold="50" 
+              scroll-top="0" scroll-left="0" scroll-into-view="" scroll-with-animation="true" enable-back-to-top="false" 
+              bindscrolltoupper="orderUpper" bindscrolltolower="orderLower" bindscroll="orderScroll">
+              <view class="scroll-bottom" >
+                加载更多...
+              </view>
+              <view class="scroll-bottom" >
+                加载更多...
+              </view>
+            </scroll-view> -->
+          </view>
+        </swiper-item>
+      </swiper>
+    <view class="tips">
+        <!-- <view wx:if="{{hasMore}}">
+            <image src="" mode="aspectFill"/>
+            <text>玩了命的加载中...</text>
+        </view> -->
+        <!--<view wx:else><text>没有更多内容了</text></view>-->
+    </view>
+</scroll-view>
+<!-- <loading hidden="{{loading}}">加载中...</loading> -->

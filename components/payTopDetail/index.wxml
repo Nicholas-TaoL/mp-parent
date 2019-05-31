@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="top-detail-ctn" >
+  <view class="top-detail-wrap" hover-class="none" hover-stop-propagation="false">
+    <image class="header-img" src="{{msg.produck_image||'/images/header.png'}}" lazy-load="false" binderror="" bindload="" />
+    <view class="detail-r" hover-class="none" hover-stop-propagation="false">
+        <view class="detail-title">
+          {{msg.title}}
+        </view>
+        <rich-text class="detail-y-price" name = 'span'>
+          ￥{{msg.origin_price}}
+        </rich-text>
+        <view class="detail-bottom" hover-class="none" hover-stop-propagation="false">
+          <view  class="group-btn" hover-class="none" hover-stop-propagation="false">
+            {{type !== 'single'?'三人拼团':'单独购买'}}
+          </view>
+          <rich-text class="detail-price" name = 'span'>
+            ￥{{msg.price}}        
+          </rich-text>
+        </view>    
+    </view> 
+  </view>
+</view>
+  

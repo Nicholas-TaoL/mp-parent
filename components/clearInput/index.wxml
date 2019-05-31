@@ -1,0 +1,16 @@
+<!--index.wxml-->
+  <view class="name-wrap">
+    <image class="left-img" src="/images/name.png"/>
+    <view class="v-line"></view>
+    <view class="label">
+      {{label}}：
+    </view>
+    <view class="input-wrap">
+      <input class="weui-input" bindinput="watchName" value="{{name}}"  auto-focus placeholder="请输入名字"/>
+      <block>
+        <icon bind:tap="clearName" type="clear" size="20" class="hide {{name.length ===0 ? '' : 'show'}}" />
+      </block>
+    </view>  
+  </view>
+  
+  

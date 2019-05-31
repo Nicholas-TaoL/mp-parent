@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="mask-wrap" hover-class="none" hover-stop-propagation="false">
+  <view class="mask-content-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="mask-content" hover-class="none" hover-stop-propagation="false">
+      <view class="top-title" hover-class="none" hover-stop-propagation="false">
+        微信授权
+      </view>
+      <view class="top-content" hover-class="none" hover-stop-propagation="false">
+        申请获得以下权限：
+      </view>
+      <view class="top-content-des" hover-class="none" hover-stop-propagation="false">
+        <view class="point" hover-class="none" hover-stop-propagation="false">
+          
+        </view>
+        <view class="c-d-word" hover-class="none" hover-stop-propagation="false">
+          获得你的公开信息(昵称、头像、地区及 性别)
+        </view>
+      </view>
+      <view class="bottom" hover-class="none" hover-stop-propagation="false">
+         <view catch:tap = "closeToast" class="circle btn" hover-class="none" hover-stop-propagation="false">
+            取消
+          </view>
+          <view class="allow btn" hover-class="none" hover-stop-propagation="false">
+            允许
+          </view>
+          <button bind:tap="goToSQ" class='share-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>
+      </view>
+     
+
+
+    </view>
+  </view>
+</view>
+  
+  

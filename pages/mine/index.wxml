@@ -1,0 +1,43 @@
+<import src="../../bottomTabbar.wxml" />
+
+<view class="mine-ctn">
+  <view class="top-ctn">
+    <image class="head-portrait" src="{{myUserInfo.head_portrait}}"  lazy-load="true" />
+      
+    <text class="name">
+      {{myUserInfo.nickname}}
+    </text>
+  </view>
+
+  <view class="my-wallet-ctn" >
+    <view  class="wallet-top" hover-class="none" hover-stop-propagation="false">
+      <image class="wallet" src="{{basUrl}}/wallet.png"/>
+      <rich-text class="wallet-val" name = 'span'>我的钱包</rich-text>
+      <image class="tip" src="{{basUrl}}/tip.png"/>
+    </view>
+    <view class="wallet-bottom">
+      <view bind:tap="onClickWallet" data-type = '{{item}}' wx:for="{{myUserInfo.bi}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="wallet-b-item" hover-class="none" hover-stop-propagation="false">
+        <rich-text class="wallet-val" name = 'span'>{{item.merit}}</rich-text>
+        <rich-text class="wallet-label" name = 'span'>{{item.name}}</rich-text>
+      </view>
+    </view>
+  </view>
+
+  <view class="apply-ctn" wx:if="{{is_tuanzhang===0}}">
+    <view class="apply-btn" bind:tap="dialog">
+      申请成为社群团长
+    </view>
+  </view>
+  <!-- <dialog wx:if="{{showDialog}}" showDialog = "{{showDialog}}"></dialog> -->
+
+  <view class="bottom-ctn">
+    <view class="bottom-item-wrap" hover-class="none" hover-stop-propagation="false">
+      <list-item bind:tap="onGoDetail" data-item = '{{item}}' item = '{{item}}'  wx:for="{{mineLists}}" wx:for-index="index" wx:for-item="item" wx:key="index" class="item-ctn"></list-item>
+    </view>
+  </view>
+    <show-dialog toastTitle = '{{toastTitle}}' desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide2}}" data-type = '2'  bind:close = 'closeCallBack' bind:goToSQ = 'goToSQ' hide='{{hide2}}'></show-dialog>
+    <show-toast desMsg = '{{desMsg}}' type = '{{type}}' wx:if="{{!hide3}}" data-type = '1' toastDurating = '{{toastDurating}}' bind:close = 'closeCallBack' hide='{{hide3}}'></show-toast>
+
+
+</view>
+

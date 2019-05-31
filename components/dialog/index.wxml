@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="mask-wrap" hover-class="none" hover-stop-propagation="false">
+  <view class="mask-content-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="mast-top" hover-class="none" hover-stop-propagation="false">
+      <image class="status-img" src="{{basUrl}}/shareBanner.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      <!-- <rich-text class="title" name = 'span'>
+        分享奖励
+      </rich-text> -->
+      <view wx:for="{{msgs}}" wx:key="index" wx:for-index="index" class="dis-msg" name = 'span'>
+        {{item}}
+      </view>
+       <button wx:if="{{!toastTitle}}" class='share-btn' open-type='share' data-shareModel='{{}}'> 分享给好友 </button>
+       <!-- <button bind:tap="goToSQ" wx:else class='share-btn'> </button> -->
+       <button bind:tap="goToSQ" wx:else class='share-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">{{toastTitle }}</button>
+
+    </view>
+    <view class="bottom" hover-class="none" hover-stop-propagation="false">
+      <view class="close" hover-class="none" hover-stop-propagation="false">
+        <image bind:tap="closeToast" class="close-img"  src="{{basUrl}}/closed.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+      </view>
+    </view>
+      
+      
+  </view>
+    
+</view>
+  
+  

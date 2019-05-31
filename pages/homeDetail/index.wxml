@@ -1,0 +1,219 @@
+<view class="class-detail">
+  <scroll-view scroll-y class = "scrolly-wrap">
+    <view class="tab-wrap tab-fixed tab-fixed-{{isTabShow}}">
+      <view class="swiper-tab"  >
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">课程介绍</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">课程目录</view>
+      </view>
+    </view>
+<image class="top-banner-wrap" src="{{bannerUrl}}" lazy-load="1" binderror="imgerr" bindload="imgload" />
+  <view class="introduce-ctn" hover-class="none" hover-stop-propagation="false">
+    <rich-text class="title" name = 'span' selectable="false" space="false" decode="false">
+      {{item.title}}
+    </rich-text>
+    <!-- <view class="class-time" hover-class="none" hover-stop-propagation="false">
+      <rich-text class="time" name = 'span' selectable="false" space="false" decode="false">
+        开课时间：{{item.classtime}}
+      </rich-text>
+    </view> -->
+    <view class="class-teacher" hover-class="none" hover-stop-propagation="false">
+      <rich-text class="time" name = 'span' selectable="false" space="false" decode="false">
+        主讲老师：{{item.teacher_name}}
+      </rich-text>
+    </view>
+    <view class="class-pz" hover-class="none" hover-stop-propagation="false">
+      <view class="class-pzl" >
+        <rich-text class="time" name = 'span' selectable="false" space="false" decode="false">
+          推荐指数：
+        </rich-text>
+        <image wx:for="{{starts}}" wx:for-index="index" wx:for-item="item" wx:key="index" class="start-img" src="{{(index+1) <= quality ? item.selectedSrc : item.src}}" />
+      </view>
+    </view>
+    <view class="class-pzr" >
+      <rich-text class="y_price" name = 'span' selectable="false" space="false" decode="false">
+        ￥{{item.origin_price}}
+      </rich-text>
+      <rich-text class="price" name = 'span' selectable="false" space="false" decode="false">
+        ￥{{item.price}}
+      </rich-text>
+      <rich-text class="number" name = 'span' selectable="false" space="false" decode="false">
+        {{item.sign_number}}人报名
+      </rich-text>
+    </view>
+  
+  </view>
+  <view class="pt-shop" hover-class="none" hover-stop-propagation="false">
+    <view class="pt-top" hover-class="none" hover-stop-propagation="false">
+      拼团购买
+    </view>
+    <view  wx:if="{{groupLists.length == 0}}" class="no-message" hover-class="none" hover-stop-propagation="false">
+        暂无任何拼团
+      </view>
+      <view wx:else class="group-list-wrap">
+        <swiper
+          indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}"
+          interval="{{interval}}"
+          duration="{{duration}}"
+          circular = 'true'
+          easing-function = 'easeInOutCubic'
+          style = "min-height: 100rpx;"
+        >
+          <block wx:for="{{groupLists}}" wx:for-item="listItem" wx:for-index="index" wx:key="index">
+            <swiper-item>
+               <view wx:for="{{listItem.childs}}" wx:for-index="indx" wx:for-item="item" wx:key="indx" class="item-wrap">
+                  <view class="item-left-wrap">
+                    <image class="item-img" src="{{item.head_portrait||'/images/toux.jpg'}}"/>
+                    <view class="item-name" name="span">{{listItem.childs[indx].nickname}}</view>
+                  </view>
+                  <view class="item-right-wrap-one">
+                    <view class="time-num">
+                      <view class="num-wrap">
+                        还差
+                        <rich-text class="num" name = 'span'>
+                          {{item.cha_number}}人
+                        </rich-text>
+                        成团
+                      </view>
+                      <view class="time-wrap">
+                        剩余
+                        <rich-text class="time" name = 'span'>
+                          {{groupLists[index].childs[indx].mcountDown}}
+                        </rich-text>
+                      </view>
+                    </view>
+                    <view bind:tap="onClickGroup" data-type = 'group' class="go-group" data-item = "{{item}}" hover-class="none" hover-stop-propagation="false">
+                      去拼团
+                    </view>
+                  </view>
+                </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      
+  </view>
+    
+  <!-- <tab-swiper swipObj = "{{swipObj}}"></tab-swiper> -->
+  <view class="tab-scroll-wrap" hover-class="none" hover-stop-propagation="false">
+    <view class="tab-wrap" id = 'affix'>
+      <view class="swiper-tab"  >
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">课程介绍</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">课程目录</view>
+      </view>
+    </view>
+    <view wx:if="{{currentTab==0}}" class="swiper-one" hover-class="none" hover-stop-propagation="false">
+     <view class="introduce">
+            <view class="teach-intrd-ctn">
+              <rich-text class="teach-intrd" name = 'span'>
+                老师简介
+              </rich-text>
+              <view class="header-img-name">
+                <image class="head-img" src="{{item.teacher.pic_url||'/images/toux.jpg'}}" />
+                <rich-text class="teach-name" name = 'span'>
+                  {{item.teacher.name}}
+                </rich-text> 
+              </view>
+              <view class="introduce-one">
+                  <rich-text class="introduce-one-span" nodes="{{item.teacher.description}}">
+                  </rich-text>          
+              </view>
+              <view class="introduce-one">
+                <rich-text class="teach-intrd" name = 'span'>
+                  课程亮点
+                </rich-text>
+                  
+                <rich-text class="introduce-one-span" nodes="{{item.teacher.course_main}}">
+                  
+                </rich-text>
+                               
+              
+              </view>
+            </view>
+            <view class="class-dg" hover-class="none" hover-stop-propagation="false">
+                <rich-text class="teach-intrd" name = 'span'>
+                  课程大纲
+                </rich-text>
+                <view class="class-dg-item" hover-class="none" hover-stop-propagation="false">
+                  <rich-text class="" nodes="{{item.teacher.outline}}">
+
+                  </rich-text>
+                    
+                </view>
+              
+              </view>
+              
+          </view>
+    </view>
+    <view wx:else class="swiper-two" hover-class="none" hover-stop-propagation="false">
+      <view class="list-item-wrap" hover-class="none" hover-stop-propagation="false">
+         <view bind:tap="goToListDetail" data-item = '{{item}}' wx:for="{{dakas}}" wx:for-index="index" wx:key="index" class="list-item" hover-class="none" hover-stop-propagation="false">
+          <view class="img-wrap" hover-class="none" hover-stop-propagation="false">
+            <image src="{{item.produck_image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+          </view>
+          <view class="item-right-wrap" hover-class="none" hover-stop-propagation="false">
+            <view class="item-left" hover-class="none" hover-stop-propagation="false">
+              <view class="title ellipsis" hover-class="none" hover-stop-propagation="false">
+                {{item.title}}
+              </view>
+              <view class="msg" hover-class="none" hover-stop-propagation="false">
+                <view class="play-nums" selectable="false" space="false" decode="false">
+                  {{item.sign_number}} 次播放
+                </view>
+                <view class="play-time" selectable="false" space="false" decode="false">
+                  {{item.classtime}}
+                </view>
+                <view wx:if="{{item.audition == 1}}" class="play-state" hover-class="none" hover-stop-propagation="false">
+                  试听 
+                </view>
+              </view>
+            </view>
+            <view class="item-right" hover-class="none" hover-stop-propagation="false">
+              <image data-item = '{{item}}' class="play-img-btn" src="{{basUrl}}/paly-gray.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  
+  
+  
+  </scroll-view> 
+  
+  <view wx:if="{{item.is_pay != 1}}" class="bottom-ctn" hover-class="none" hover-stop-propagation="false">
+    <view bind:tap="onShareAppMessage" class="share-wrap" hover-class="none" hover-stop-propagation="false">
+      <image class="share-img" src="/images/share.png"/>
+      <rich-text class="share-label" name = 'span'>
+        分享
+      </rich-text>
+      <button class="share-btn" open-type="share"></button>
+    </view>
+    <view class="buy-wrap"  hover-class="none" hover-stop-propagation="false">
+      <view class="buy-only" data-type = 'single' bind:tap="onBuy"  hover-class="none" hover-stop-propagation="false">
+        <rich-text class="buy-num" name = 'span'>
+          ￥{{item.price}} 
+        </rich-text>
+        <rich-text class="buy-label" name = 'span'>      
+          单独购买
+        </rich-text>
+      </view>
+      <view class="buy-group" data-type = 'group' bind:tap="onBuy" hover-class="none" hover-stop-propagation="false">
+        <rich-text class="buy-num" name = 'span'>
+          ￥{{item.tprice.price}} 
+        </rich-text>
+        <rich-text class="buy-label" name = 'span'>      
+          发起拼团
+        </rich-text>
+      </view>
+    </view>
+      
+  </view>
+  <view wx:if="{{isTuan}}" animation = '{{rotateData}}' class="start-group" data-type = 'actionGroup' bind:tap="onBuy" hover-class="none" hover-stop-propagation="false">
+    <text class="kt-label" name = 'span'>      
+      团长开团
+    </text>
+  </view>
+</view>
+  

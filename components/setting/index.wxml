@@ -1,0 +1,9 @@
+<view class="setting-item-ctn" hover-class="none" hover-stop-propagation="false">
+  <rich-text class="label" name = 'span'>
+    {{item.label}}
+  </rich-text>
+  <image class="next-icon" src="{{basUrl}}/next.png" />
+    
+</view>
+  
+  

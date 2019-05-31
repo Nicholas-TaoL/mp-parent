@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabView": "/components/tabChage/index",
+    "wallet-tab": "/components/walletTab/index",
+    "wallet-kist": "/components/walletList/index"
+  }
+}
